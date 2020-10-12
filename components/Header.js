@@ -22,7 +22,7 @@ function Header() {
     date.className = 'date'
     temp.className = 'temp'
     
-    date.textContent = 'MARCH 28, 2020'
+    date.textContent = 'OCTOBER 10, 2020'
     h1.textContent = 'Lambda Times'
     temp.textContent = '98°'
 
@@ -32,3 +32,7 @@ function Header() {
 
     return header
 }
+
+
+const headerContainer = document.querySelector('.header-container')
+headerContainer.appendChild(Header())

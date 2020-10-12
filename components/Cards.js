@@ -45,5 +45,44 @@ erros.appendChild(errorMessages(err))
 
 function cardMarker(obj){
     const card = document.createElement('div')
+    const headline = document.creatElement('div')
+    const author = document.createElement('div')
+    const imgContainer = document.createElement('img')
+    const img = document.createElement('img')
+    const authorName = document.createElement('span')
+
+    headline.textContent = obj.headline
+    img.src = obj.authorPhoto
+    authorName.textContent = obj.authorName
+
+    card.className = 'card'
+    headline.className = 'headline'
+    author.className = 'author'
+    imgContainer.classname = 'img-container'
     
+    card.appendChild(headline)
+    card.appendChild(author)
+    author.appendChild(imgCOntainer)
+    imgContainer.appendChild(img)
+    author.appendChild(authorName)
+
+    card.addEventListener('click', () => {
+        console.log(obj.headline)
+    })
+  
+    return card
+}
+
+function errorMessages (err){
+    const error = document.createElement('div')
+    const status = document.createElement('h3')
+    const headers = document.createElement('p')
+
+    status.textContent = `Error ${err.response.status} ${err.response.request.statusText}`
+    headers.textContent = err.messsage
+
+    error.appendChild(status)
+    error.appendChild(headers)
+
+    return error
 }
